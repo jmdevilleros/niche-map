@@ -56,4 +56,4 @@ Corpora you build should hold public facts (names, URLs, published prices) and y
 - Code (`*.py`): **MIT**, see [`LICENSE`](LICENSE).
 - Documentation (`SKILL.md`, `README.md`, `templates/`, `examples/README.md`) and the synthetic example data: **CC BY 4.0**, see [`LICENSE-docs`](LICENSE-docs).
 
-© 2026 Juan Manuel de Villeros Arias
+© 2026 Juan Manuel de Villeros
