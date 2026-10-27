@@ -275,7 +275,7 @@ def main():
     dens = density_gaps(df, X, cfg, a.samples, rng); dens.to_csv(f"{a.out}/density_gaps.csv", index=False)
     keydims = cfg.get("density_dedupe", list(cfg["categorical"])[:4])
     (dens.drop_duplicates(subset=keydims).head(40) if len(dens) else dens).to_csv(f"{a.out}/density_gaps_top.csv", index=False)
-    dgg, _ = NearestNeighbors(n_neighbors=2).fit(X).kneighbors(X); nnd = dgg[:, 1]
+    dgg, _ = NearestNeighbors(n_neighbors=2).fit(X).kneighbors(X); nnd = dgg[:, 1]; nnd[nnd < 1e-6] = 0.0
     n_dup = int((nnd == 0).sum())
     if n_dup: print(f"WARNING: {n_dup} item(s) share an identical vector with another item; the rubric may be too coarse to tell them apart.")
     med = float(np.median(nnd[nnd > 0])) if (nnd > 0).any() else 0.0   # reference scale: median distance to nearest DISTINCT real item

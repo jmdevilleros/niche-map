@@ -23,3 +23,23 @@ python recode_check.py sample --items examples/synthetic_items.csv --config exam
 Takes about 20-30 s. Expected: 67 items, k = 15 with silhouette ≈ 0.35, 51 coherent gap triples, about 1,100 feasible density vectors, and three warnings worth reading (small clusters, items with identical vectors) that SKILL.md explains.
 
 Candidate `C3` deliberately sits on top of existing items (`dist_min` = 0): it shows what a non-gap looks like. In `fig_umap.png` it may still be drawn away from the islands, which illustrates why novelty must be read from `dist_min` in the original space and never from the UMAP plot.
+
+## What the output looks like
+
+These figures come from running the commands above on the synthetic data (fictional items, not market data).
+
+**UMAP map (visualization only).** Colors are Ward clusters, grey shading is item density, and the stars are the three example candidates from `config.json`.
+
+![UMAP map of the synthetic example](figures/fig_umap.png)
+
+**PCA gradients.** The main axes of variation in the original coded space.
+
+![PCA of the synthetic example](figures/fig_pca.png)
+
+**Cluster profiles.** How each cluster scores on each dimension.
+
+![Cluster heatmaps of the synthetic example](figures/fig_heatmaps.png)
+
+**Gaps.** Empty value combinations and low-density zones that survive the coherence rules and the user-fit filter.
+
+![Gaps in the synthetic example](figures/fig_gaps.png)

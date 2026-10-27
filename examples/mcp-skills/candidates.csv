@@ -1,0 +1,10 @@
+id,name,dist_min,dist_rel_median,novelty,feasibility,fit,mirage,mirage_factor,final_score
+G9,Event-driven infra watcher server,1.342,1.60,4,4,4,pass,1.0,64.0
+G1,Report-writing analysis server,1.582,1.89,3,4,3,doubtful,0.7,25.2
+G8,Systematic-review protocol server,1.131,1.35,3,4,3,doubtful,0.7,25.2
+G6,Personal-service operator skill,1.305,1.56,3,3,3,doubtful,0.7,18.9
+G2,Fresh-docs retrieval skill,1.281,1.53,1,5,4,fail,0.4,8.0
+G7,Multi-step media pipeline server,1.0,1.19,2,3,3,fail,0.4,7.2
+G4,Design-critique skill,0.8,0.95,1,5,3,fail,0.4,6.0
+G3,Diagram/codegen server for developers,1.342,1.60,1,4,3,fail,0.4,4.8
+G5,Infra-to-code generator server,1.414,1.69,2,2,2,fail,0.4,3.2

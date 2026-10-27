@@ -7,6 +7,10 @@ You collect ~50-150 real items, code them on 8-15 explicit dimensions with a wri
 - **Method:** [`SKILL.md`](SKILL.md) (steps 0-7, scoring, deliverable spec, checklist).
 - **Status:** v1.0.0.
 
+![UMAP map of the MCP servers and agent skills case: Ward clusters in color, density in grey, candidate ideas as stars](examples/mcp-skills/figures/fig_umap.png)
+
+*Real case: 144 public MCP servers and agent skills. See the [walkthrough](examples/mcp-skills/WALKTHROUGH.md). A synthetic example with fictional data is in [examples/](examples/README.md).*
+
 ## Contents
 
 | Path | What it is |

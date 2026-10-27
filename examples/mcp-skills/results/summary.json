@@ -1,0 +1,32 @@
+{
+ "n_items": 144,
+ "n_features": 42,
+ "k": 8,
+ "silhouette": 0.245,
+ "pca_variance": [
+  0.249,
+  0.11,
+  0.099
+ ],
+ "median_nn_distance": 0.838,
+ "items_with_identical_vector": 29,
+ "gap_triples": 105,
+ "coherent_gap_triples": 105,
+ "feasible_synthetic_vectors": 1438,
+ "k_on_edge": false,
+ "silhouette_by_k": {
+  "4": 0.1721,
+  "5": 0.2019,
+  "6": 0.2173,
+  "7": 0.2345,
+  "8": 0.2449,
+  "9": 0.244,
+  "10": 0.2146,
+  "11": 0.227,
+  "12": 0.2282,
+  "13": 0.2205,
+  "14": 0.2241,
+  "15": 0.1988,
+  "16": 0.1873
+ }
+}
