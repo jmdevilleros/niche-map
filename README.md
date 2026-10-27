@@ -7,6 +7,10 @@ You collect ~50-150 real items, code them on 8-15 explicit dimensions with a wri
 - **Method:** [`SKILL.md`](SKILL.md) (steps 0-7, scoring, deliverable spec, checklist).
 - **Status:** v1.0.0.
 
+![UMAP map of the synthetic example: Ward clusters in color, density in grey, candidate ideas as stars](examples/figures/fig_umap.png)
+
+*Synthetic example with fictional data. See [examples/](examples/README.md) for all the figures.*
+
 ## Contents
 
 | Path | What it is |
