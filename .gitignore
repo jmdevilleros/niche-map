@@ -1,0 +1,19 @@
+# analysis outputs
+out/
+output/
+**/out/
+**/output/
+*.pdf
+# private material: never commit real corpora, raw verification dumps or recode sheets
+private/
+*_private*
+verification_raw*.json
+recode_sheet*.csv
+agreement*.csv
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
