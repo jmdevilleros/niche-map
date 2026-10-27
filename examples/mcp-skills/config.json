@@ -1,0 +1,395 @@
+{
+ "description": "Worked example: 144 public MCP servers and agent skills, coded by hand with RUBRIC.md (October 2026). Codes are analyst judgments; see WALKTHROUGH.md.",
+ "id_col": "id",
+ "categorical": {
+  "kind": {
+   "values": [
+    "mcp",
+    "skill"
+   ],
+   "weight": 1.0,
+   "labels": {
+    "mcp": "MCP server",
+    "skill": "agent skill"
+   }
+  },
+  "action": {
+   "values": [
+    "retrieve",
+    "operate",
+    "execute",
+    "create",
+    "analyze",
+    "remember",
+    "guide",
+    "coordinate"
+   ],
+   "weight": 1.2
+  },
+  "domain": {
+   "values": [
+    "software",
+    "infra_data",
+    "web",
+    "docs_office",
+    "comms_social",
+    "business",
+    "finance",
+    "knowledge_pro",
+    "media_design",
+    "everyday",
+    "security",
+    "agent_meta"
+   ],
+   "weight": 1.0,
+   "labels": {
+    "infra_data": "infra & data",
+    "docs_office": "docs & office",
+    "comms_social": "comms & social",
+    "knowledge_pro": "science/legal/edu",
+    "media_design": "media & design",
+    "agent_meta": "agents & LLMs"
+   }
+  },
+  "user": {
+   "values": [
+    "developer",
+    "analyst",
+    "business",
+    "creator",
+    "general"
+   ],
+   "weight": 0.8
+  },
+  "output": {
+   "values": [
+    "chat",
+    "file",
+    "external"
+   ],
+   "weight": 0.8,
+   "labels": {
+    "chat": "answer in chat",
+    "file": "file/artifact",
+    "external": "change in external system"
+   }
+  },
+  "mode": {
+   "values": [
+    "lookup",
+    "session",
+    "procedure",
+    "ambient"
+   ],
+   "weight": 0.8
+  },
+  "license": {
+   "values": [
+    "permissive",
+    "copyleft",
+    "none"
+   ],
+   "weight": 0.4
+  },
+  "maintainer": {
+   "values": [
+    "lab",
+    "vendor",
+    "community"
+   ],
+   "weight": 0.6
+  }
+ },
+ "ordinal": {
+  "runs_where": [
+   0,
+   2
+  ],
+  "auth": [
+   0,
+   2
+  ]
+ },
+ "ordinal_weights": {
+  "runs_where": 0.6,
+  "auth": 0.5
+ },
+ "gap_dims": [
+  "kind",
+  "action",
+  "domain",
+  "user",
+  "output",
+  "mode"
+ ],
+ "anchor_dims": [
+  "action",
+  "domain"
+ ],
+ "rules": [
+  [
+   [
+    "kind",
+    "==",
+    "skill"
+   ],
+   [
+    "runs_where",
+    "==",
+    2
+   ]
+  ],
+  [
+   [
+    "kind",
+    "==",
+    "mcp"
+   ],
+   [
+    "runs_where",
+    "==",
+    0
+   ]
+  ],
+  [
+   [
+    "action",
+    "==",
+    "remember"
+   ],
+   [
+    "output",
+    "==",
+    "chat"
+   ]
+  ],
+  [
+   [
+    "action",
+    "==",
+    "guide"
+   ],
+   [
+    "output",
+    "==",
+    "external"
+   ]
+  ],
+  [
+   [
+    "action",
+    "==",
+    "guide"
+   ],
+   [
+    "mode",
+    "==",
+    "lookup"
+   ]
+  ]
+ ],
+ "target_filter": [
+  [
+   "maintainer",
+   "==",
+   "community"
+  ],
+  [
+   "auth",
+   "<=",
+   1
+  ]
+ ],
+ "k_range": [
+  4,
+  16
+ ],
+ "seed": 42,
+ "umap_neighbors": 12,
+ "min_pair_support": 2,
+ "min_expected": 1.2,
+ "max_observed": 1,
+ "density_dedupe": [
+  "kind",
+  "action",
+  "domain",
+  "user",
+  "output",
+  "mode"
+ ],
+ "heatmap_pairs": [
+  [
+   "action",
+   "domain"
+  ],
+  [
+   "domain",
+   "user"
+  ],
+  [
+   "action",
+   "mode"
+  ],
+  [
+   "action",
+   "output"
+  ]
+ ],
+ "label_items": [],
+ "cluster_names": {
+  "0": "Operators (MCP that change external systems)",
+  "1": "Memory and stateful sessions",
+  "2": "Lookups (read-only MCP)",
+  "3": "Artifact makers (skills that write files)",
+  "4": "Developer workflow skills",
+  "5": "Analyzers (MCP that compute or assess)",
+  "6": "Guidance skills (conventions)",
+  "7": "Coordinators (agent governance)"
+ },
+ "candidates": [
+  {
+   "id": "G1",
+   "name": "Report-writing analysis server",
+   "vec": {
+    "kind": "mcp",
+    "action": "analyze",
+    "domain": "docs_office",
+    "user": "business",
+    "output": "file",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G2",
+   "name": "Fresh-docs retrieval skill",
+   "vec": {
+    "kind": "skill",
+    "action": "retrieve",
+    "domain": "software",
+    "user": "developer",
+    "output": "chat",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G3",
+   "name": "Diagram/codegen server for developers",
+   "vec": {
+    "kind": "mcp",
+    "action": "create",
+    "domain": "software",
+    "user": "developer",
+    "output": "file",
+    "mode": "lookup",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G4",
+   "name": "Design-critique skill",
+   "vec": {
+    "kind": "skill",
+    "action": "analyze",
+    "domain": "media_design",
+    "user": "creator",
+    "output": "chat",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G5",
+   "name": "Infra-to-code generator server",
+   "vec": {
+    "kind": "mcp",
+    "action": "create",
+    "domain": "infra_data",
+    "user": "developer",
+    "output": "file",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G6",
+   "name": "Personal-service operator skill",
+   "vec": {
+    "kind": "skill",
+    "action": "operate",
+    "domain": "everyday",
+    "user": "general",
+    "output": "external",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G7",
+   "name": "Multi-step media pipeline server",
+   "vec": {
+    "kind": "mcp",
+    "action": "create",
+    "domain": "media_design",
+    "user": "creator",
+    "output": "file",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G8",
+   "name": "Systematic-review protocol server",
+   "vec": {
+    "kind": "mcp",
+    "action": "retrieve",
+    "domain": "knowledge_pro",
+    "user": "analyst",
+    "output": "file",
+    "mode": "procedure",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 0
+   }
+  },
+  {
+   "id": "G9",
+   "name": "Event-driven infra watcher server",
+   "vec": {
+    "kind": "mcp",
+    "action": "analyze",
+    "domain": "infra_data",
+    "user": "developer",
+    "output": "chat",
+    "mode": "ambient",
+    "license": "permissive",
+    "maintainer": "community",
+    "runs_where": 1,
+    "auth": 1
+   }
+  }
+ ]
+}
