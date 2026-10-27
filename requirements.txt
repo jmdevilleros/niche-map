@@ -1,0 +1,10 @@
+# core analysis (niche_core.py, recode_check.py)
+matplotlib>=3.8
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+scipy>=1.11
+umap-learn>=0.5.5
+# PDF report (optional, md_to_pdf.py)
+Markdown>=3.5
+weasyprint>=60.0
